@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#293529">
+  <meta name="description" content="Solicite uma avaliação para ser parceira AuraLuz e trabalhar com semijoias premium banhadas em ouro 18K por consignação.">
+  <title>Seja parceira AuraLuz | Semijoias premium por consignação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #293529;
+      --forest-2: #354435;
+      --forest-3: #182118;
+      --sage: #aeb6a3;
+      --sage-soft: #dfe3d9;
+      --ivory: #f7f3eb;
+      --paper: #fffdf8;
+      --gold: #c6a55f;
+      --gold-light: #eadbb6;
+      --ink: #1d211c;
+      --muted: #666b62;
+      --line: rgba(41, 53, 41, .16);
+      --danger: #8a493d;
+      --shadow: 0 24px 70px rgba(24, 33, 24, .14);
+      --radius: 28px;
+      --serif: "Italiana", "Times New Roman", serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--ivory);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .section { padding: 112px 0; }
+    .section-tight { padding: 82px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--forest-2);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 26px; height: 1px; content: ""; background: var(--gold); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -.03em;
+      line-height: 1.06;
+    }
+    h1 { margin-bottom: 26px; font-size: clamp(3rem, 6.1vw, 6.15rem); }
+    h2 { margin-bottom: 22px; font-size: clamp(2.35rem, 4.5vw, 4.55rem); }
+    h3 { margin-bottom: 12px; font-size: 1.08rem; line-height: 1.35; }
+    .section-head { max-width: 760px; margin-bottom: 52px; }
+    .section-head.center { margin-right: auto; margin-left: auto; text-align: center; }
+    .section-head.center .eyebrow { justify-content: center; }
+    .section-head > p { color: var(--muted); font-size: 1.08rem; }
+
+    .btn {
+      display: inline-flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 25px;
+      border: 1px solid rgba(41, 53, 41, .25);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--forest);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { border-color: var(--gold); background: var(--gold); color: var(--forest-3); }
+    .btn-primary:hover { background: #d4b36c; }
+    .btn-light { border-color: rgba(255,255,255,.32); color: white; }
+
+    .topbar {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 24px 0;
+      color: white;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand img { width: 62px; height: 62px; border: 1px solid rgba(234,219,182,.5); border-radius: 50%; object-fit: cover; }
+    .brand span { display: grid; line-height: 1.12; }
+    .brand b { font-family: var(--serif); font-size: 1.28rem; font-weight: 400; letter-spacing: .02em; }
+    .brand small { opacity: .7; font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; }
+
+    .hero {
+      position: relative;
+      min-height: 860px;
+      overflow: hidden;
+      background: var(--forest);
+      color: white;
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(90deg, rgba(20,29,20,.96) 0%, rgba(27,38,27,.87) 45%, rgba(27,38,27,.22) 73%, rgba(27,38,27,.1) 100%), url("assets/mostruario-horizontal-2.jpeg") 72% center / cover no-repeat;
+    }
+    .hero::after {
+      position: absolute;
+      right: -100px;
+      bottom: -210px;
+      width: 560px;
+      height: 560px;
+      border: 1px solid rgba(234,219,182,.26);
+      border-radius: 50%;
+      content: "";
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      min-height: 860px;
+      align-items: center;
+      padding: 145px 0 72px;
+      grid-template-columns: minmax(0, 720px) 1fr;
+    }
+    .hero .eyebrow { color: var(--gold-light); }
+    .hero-copy { max-width: 700px; }
+    .hero-copy h1 em { color: var(--gold-light); font-style: normal; }
+    .hero-lead { max-width: 650px; margin-bottom: 32px; color: rgba(255,255,255,.81); font-size: clamp(1.08rem, 1.7vw, 1.3rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .hero-note { max-width: 620px; margin: 22px 0 0; color: rgba(255,255,255,.57); font-size: .82rem; }
+    .hero-seal {
+      position: absolute;
+      right: 1%;
+      bottom: 70px;
+      display: grid;
+      width: 164px;
+      height: 164px;
+      place-items: center;
+      border: 1px solid rgba(234,219,182,.54);
+      border-radius: 50%;
+      color: var(--gold-light);
+      text-align: center;
+      transform: rotate(-7deg);
+    }
+    .hero-seal span { max-width: 110px; font-size: .7rem; font-weight: 700; letter-spacing: .13em; line-height: 1.45; text-transform: uppercase; }
+
+    .proofbar { border-bottom: 1px solid var(--line); background: var(--paper); }
+    .proofbar-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .proof-item { min-height: 126px; padding: 28px 30px; border-right: 1px solid var(--line); }
+    .proof-item:last-child { border: 0; }
+    .proof-item b { display: block; margin-bottom: 5px; color: var(--forest); font-family: var(--serif); font-size: 1.35rem; font-weight: 400; }
+    .proof-item span { color: var(--muted); font-size: .83rem; }
+
+    .fit-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+    .fit-card {
+      position: relative;
+      min-height: 310px;
+      overflow: hidden;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+    .fit-card::after {
+      position: absolute;
+      right: -45px;
+      bottom: -70px;
+      width: 170px;
+      height: 170px;
+      border: 1px solid rgba(198,165,95,.35);
+      border-radius: 50%;
+      content: "";
+    }
+    .fit-card .number { margin-bottom: 42px; color: var(--gold); font-family: var(--serif); font-size: 2.1rem; }
+    .fit-card p { color: var(--muted); }
+    .filter-panel {
+      display: grid;
+      margin-top: 24px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--forest);
+      color: white;
+      grid-template-columns: 1fr 1fr;
+    }
+    .filter-panel > div { padding: 45px; }
+    .filter-panel > div:last-child { background: rgba(255,255,255,.055); }
+    .filter-panel h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; }
+    .filter-panel ul { margin: 22px 0 0; padding: 0; list-style: none; }
+    .filter-panel li { position: relative; margin: 11px 0; padding-left: 26px; color: rgba(255,255,255,.75); }
+    .filter-panel li::before { position: absolute; left: 0; color: var(--gold); content: "◇"; }
+
+    .process { background: var(--paper); }
+    .process-grid { display: grid; gap: 0; grid-template-columns: repeat(4, 1fr); }
+    .step { position: relative; padding: 0 30px 20px 0; }
+    .step::after { position: absolute; top: 23px; right: 18px; left: 56px; height: 1px; content: ""; background: var(--line); }
+    .step:last-child::after { display: none; }
+    .step-n {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 28px;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--forest);
+      font-weight: 700;
+    }
+    .step p { color: var(--muted); font-size: .92rem; }
+    .truth-note { margin-top: 38px; padding: 22px 26px; border-left: 3px solid var(--gold); background: var(--ivory); color: var(--muted); }
+    .truth-note b { color: var(--forest); }
+
+    .showcase { overflow: hidden; background: var(--forest); color: white; }
+    .showcase-grid { display: grid; align-items: center; gap: 84px; grid-template-columns: .8fr 1.2fr; }
+    .video-frame {
+      position: relative;
+      max-width: 420px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(234,219,182,.35);
+      border-radius: 34px;
+      background: #111;
+      box-shadow: 0 30px 90px rgba(0,0,0,.3);
+      aspect-ratio: 9 / 16;
+    }
+    .video-frame video { width: 100%; height: 100%; object-fit: cover; }
+    .showcase .eyebrow { color: var(--gold-light); }
+    .showcase-copy > p { max-width: 620px; color: rgba(255,255,255,.72); font-size: 1.06rem; }
+    .quality-list { display: grid; margin-top: 34px; gap: 14px; grid-template-columns: 1fr 1fr; }
+    .quality-item { padding: 21px; border: 1px solid rgba(255,255,255,.13); border-radius: 18px; background: rgba(255,255,255,.045); }
+    .quality-item b { display: block; color: var(--gold-light); }
+    .quality-item span { color: rgba(255,255,255,.62); font-size: .86rem; }
+    .pending-proof { margin-top: 28px; padding: 18px 20px; border: 1px dashed rgba(234,219,182,.42); border-radius: 16px; color: rgba(255,255,255,.68); font-size: .83rem; }
+
+    .contexts { display: grid; gap: 18px; grid-template-columns: 1.15fr .85fr .85fr; }
+    .context-card { min-height: 400px; padding: 34px; border-radius: var(--radius); background: var(--paper); }
+    .context-card.primary { display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(0deg, rgba(23,32,23,.95), rgba(23,32,23,.08)), url("assets/maleta-fechada.jpeg") center/cover; color: white; }
+    .context-card .tag { display: inline-block; align-self: flex-start; margin-bottom: auto; padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--forest); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .context-card.primary .tag { border-color: rgba(255,255,255,.32); color: white; }
+    .context-card h3 { font-family: var(--serif); font-size: 1.95rem; font-weight: 400; }
+    .context-card p { margin-bottom: 0; color: var(--muted); }
+    .context-card.primary p { color: rgba(255,255,255,.74); }
+
+    .selection { background: var(--sage-soft); }
+    .selection-grid { display: grid; align-items: start; gap: 70px; grid-template-columns: .9fr 1.1fr; }
+    .selection-copy { position: sticky; top: 30px; }
+    .selection-copy p { color: var(--muted); }
+    .criteria { display: grid; gap: 12px; }
+    .criterion { display: grid; padding: 24px; border-radius: 18px; background: rgba(255,255,255,.7); grid-template-columns: 45px 1fr; }
+    .criterion i { color: var(--gold); font-family: var(--serif); font-size: 1.5rem; font-style: normal; }
+    .criterion p { margin: 5px 0 0; color: var(--muted); font-size: .9rem; }
+
+    .faq-list { max-width: 900px; margin: 0 auto; border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 24px 0;
+      border: 0;
+      background: transparent;
+      color: var(--forest);
+      font-weight: 700;
+      text-align: left;
+    }
+    .faq-question span:last-child { color: var(--gold); font-size: 1.4rem; transition: transform .2s ease; }
+    .faq-item.open .faq-question span:last-child { transform: rotate(45deg); }
+    .faq-answer { display: grid; overflow: hidden; color: var(--muted); grid-template-rows: 0fr; transition: grid-template-rows .25s ease; }
+    .faq-answer > div { min-height: 0; }
+    .faq-answer p { max-width: 780px; padding: 0 0 24px; }
+    .faq-item.open .faq-answer { grid-template-rows: 1fr; }
+    .mvp-inline { color: var(--danger); font-size: .8rem; font-weight: 700; }
+
+    .lead-section { background: var(--forest-3); color: white; }
+    .lead-grid { display: grid; gap: 70px; grid-template-columns: .76fr 1.24fr; }
+    .lead-copy { position: sticky; top: 30px; align-self: start; }
+    .lead-copy .eyebrow { color: var(--gold-light); }
+    .lead-copy p { color: rgba(255,255,255,.67); }
+    .lead-benefits { margin: 30px 0 0; padding: 0; list-style: none; }
+    .lead-benefits li { margin: 12px 0; padding-left: 25px; color: rgba(255,255,255,.74); }
+    .lead-benefits li::before { margin-left: -25px; margin-right: 11px; color: var(--gold); content: "◇"; }
+    .form-card { padding: 38px; border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius); background: var(--paper); color: var(--ink); }
+    .form-card h3 { font-family: var(--serif); font-size: 2rem; font-weight: 400; }
+    .form-card > p { color: var(--muted); font-size: .9rem; }
+    .fields { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label, .legend { color: var(--forest); font-size: .78rem; font-weight: 700; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      min-height: 51px;
+      padding: 13px 15px;
+      border: 1px solid rgba(41,53,41,.22);
+      border-radius: 12px;
+      background: white;
+      color: var(--ink);
+    }
+    .field textarea { min-height: 96px; resize: vertical; }
+    .checks { display: grid; gap: 10px; }
+    .check { display: grid; align-items: start; gap: 10px; color: var(--muted); font-size: .82rem; grid-template-columns: 18px 1fr; }
+    .check input { width: 17px; height: 17px; margin: 3px 0 0; accent-color: var(--forest); }
+    .form-card .btn { width: 100%; }
+    .privacy-note { margin: 11px 0 0; color: var(--muted); font-size: .72rem; }
+    .form-status { display: none; margin-top: 15px; padding: 14px 16px; border-radius: 12px; background: var(--sage-soft); color: var(--forest); font-size: .85rem; }
+    .form-status.show { display: block; }
+
+    .production { background: #eee5d6; }
+    .mvp-banner { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding: 16px 20px; border: 1px dashed var(--danger); border-radius: 14px; color: #6f3c32; font-size: .84rem; }
+    .mvp-banner b { flex: 0 0 auto; padding: 5px 8px; border-radius: 999px; background: var(--danger); color: white; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; }
+    .production-grid { display: grid; gap: 17px; grid-template-columns: repeat(3, 1fr); }
+    .production-card { overflow: hidden; border: 1px solid rgba(41,53,41,.13); border-radius: 20px; background: var(--paper); }
+    .production-visual { display: grid; min-height: 190px; place-items: center; overflow: hidden; background: var(--sage-soft); color: var(--forest); text-align: center; }
+    .production-visual img { width: 100%; height: 190px; object-fit: cover; }
+    .production-visual .camera { font-family: var(--serif); font-size: 2.3rem; }
+    .production-body { padding: 23px; }
+    .production-body p { color: var(--muted); font-size: .88rem; }
+    .spec { padding-top: 11px; border-top: 1px solid var(--line); color: var(--forest); font-size: .72rem; font-weight: 700; }
+
+    footer { padding: 42px 0 90px; background: var(--forest-3); color: rgba(255,255,255,.58); }
+    .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: white; font-family: var(--serif); font-size: 1.4rem; }
+    footer p { margin: 0; font-size: .75rem; }
+
+    .mobile-cta { display: none; }
+
+    @media (max-width: 900px) {
+      .section { padding: 84px 0; }
+      .hero, .hero-inner { min-height: 760px; }
+      .hero::before { background: linear-gradient(0deg, rgba(20,29,20,.98) 0%, rgba(20,29,20,.85) 55%, rgba(20,29,20,.22) 100%), url("assets/mostruario-horizontal-2.jpeg") 52% center / cover no-repeat; }
+      .hero-inner { align-items: end; padding-bottom: 80px; grid-template-columns: 1fr; }
+      .hero-seal { display: none; }
+      .proofbar-grid, .fit-grid, .process-grid, .contexts, .production-grid { grid-template-columns: 1fr 1fr; }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .filter-panel, .selection-grid, .lead-grid, .showcase-grid { grid-template-columns: 1fr; }
+      .selection-copy, .lead-copy { position: static; }
+      .showcase-grid { gap: 55px; }
+      .video-frame { max-width: 360px; }
+      .contexts .primary { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 26px, 1160px); }
+      .section { padding: 70px 0; }
+      .topbar { padding: 14px 0; }
+      .brand img { width: 50px; height: 50px; }
+      .brand b { font-size: 1.05rem; }
+      .nav > .btn { display: none; }
+      .hero, .hero-inner { min-height: 790px; }
+      .hero-inner { padding: 120px 0 64px; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.3rem); }
+      h2 { font-size: clamp(2.2rem, 11vw, 3.2rem); }
+      .hero-actions, .hero-actions .btn { width: 100%; }
+      .proofbar-grid, .fit-grid, .process-grid, .contexts, .production-grid, .quality-list, .fields { grid-template-columns: 1fr; }
+      .proof-item { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:nth-child(3) { border-bottom: 1px solid var(--line); }
+      .fit-card { min-height: 260px; }
+      .filter-panel > div, .form-card { padding: 27px; }
+      .step { padding-right: 0; }
+      .step::after { display: none; }
+      .context-card { min-height: 330px; }
+      .contexts .primary { grid-column: auto; }
+      .field.full { grid-column: auto; }
+      .footer-grid { align-items: flex-start; flex-direction: column; }
+      .mobile-cta {
+        position: fixed;
+        z-index: 30;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        display: flex;
+        min-height: 54px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d5b670;
+        border-radius: 999px;
+        background: var(--gold);
+        color: var(--forest-3);
+        box-shadow: 0 12px 35px rgba(24,33,24,.28);
+        font-weight: 800;
+        text-decoration: none;
+        transition: opacity .25s ease, transform .25s ease;
+      }
+      .mobile-cta.hidden { opacity: 0; pointer-events: none; transform: translateY(90px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="AuraLuz Semijoias — início">
+        <img src="assets/logo-auraluz.jpg" alt="AuraLuz Semijoias">
+        <span><b>AuraLuz</b><small>Semijoias</small></span>
+      </a>
+      <a class="btn btn-light" href="#avaliacao">Solicitar avaliação</a>
+    </div>
+  </div>
+
+  <header class="hero" id="inicio">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Parceria por consignação · interior de São Paulo</div>
+        <h1>Você já construiu confiança. <em>Ela pode abrir uma nova fonte de receita.</em></h1>
+        <p class="hero-lead">A AuraLuz seleciona mulheres com uma rede ativa de clientes, colegas ou contatos para apresentar semijoias premium banhadas em ouro 18K — sem comprar o mostruário antecipadamente.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#avaliacao">Quero solicitar uma avaliação <span aria-hidden="true">→</span></a>
+          <a class="btn btn-light" href="#como-funciona">Entender a parceria</a>
+        </div>
+        <p class="hero-note">Cadastro sujeito à análise e disponibilidade por região. Esta é uma atividade comercial autônoma: não é emprego, salário ou promessa de renda.</p>
+      </div>
+      <div class="hero-seal" aria-hidden="true"><span>Curadoria premium · parceria seletiva</span></div>
+    </div>
+  </header>
+
+  <section class="proofbar" aria-label="Diferenciais da parceria">
+    <div class="container proofbar-grid">
+      <div class="proof-item"><b>Relacionamento ativo</b><span>O ponto de partida é a confiança que você já cultivou.</span></div>
+      <div class="proof-item"><b>Mostruário consignado</b><span>Sem compra antecipada das peças que compõem a parceria.</span></div>
+      <div class="proof-item"><b>Banho em ouro 18K</b><span>Design sofisticado e apresentação de leitura premium.</span></div>
+      <div class="proof-item"><b>Atuação regional</b><span>Artur Nogueira, Campinas e cidades selecionadas.</span></div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="perfil">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">O que realmente importa</div>
+          <h2>Não é sobre virar “vendedora”. É sobre reconhecer o valor da rede que você já tem.</h2>
+          <p>O cargo pode mudar. O padrão que buscamos é o mesmo: confiança, contato recorrente com pessoas e postura para conduzir uma parceria com responsabilidade.</p>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card">
+            <div class="number">01</div>
+            <h3>Uma rotina de confiança</h3>
+            <p>Você atende, ensina, orienta ou convive com pessoas que já respeitam sua indicação — em um espaço próprio, empresa, escola, banco ou repartição.</p>
+          </article>
+          <article class="fit-card">
+            <div class="number">02</div>
+            <h3>Uma rede realmente ativa</h3>
+            <p>Você sabe para quem apresentaria as peças e mantém contato frequente com esse círculo. Não depende de abordar desconhecidas.</p>
+          </article>
+          <article class="fit-card">
+            <div class="number">03</div>
+            <h3>Organização para o ciclo</h3>
+            <p>Você consegue cuidar do mostruário, registrar as vendas, receber corretamente e prestar contas nas datas combinadas.</p>
+          </article>
+        </div>
+
+        <div class="filter-panel">
+          <div>
+            <h3>Esta parceria pode fazer sentido se você…</h3>
+            <ul>
+              <li>já possui clientela, colegas ou contatos recorrentes;</li>
+              <li>gosta de indicar produtos em que acredita;</li>
+              <li>quer uma receita complementar sem abandonar sua atividade principal;</li>
+              <li>valoriza qualidade, imagem e atendimento cuidadoso.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Talvez ainda não seja o seu momento se…</h3>
+            <ul>
+              <li>você procura renda sem participar do processo de venda;</li>
+              <li>ainda não sabe a quem apresentaria o mostruário;</li>
+              <li>não tem disponibilidade para acompanhar peças e pagamentos;</li>
+              <li>prefere uma promessa rápida a uma parceria com regras claras.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="como-funciona">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Como funciona</div>
+          <h2>Uma parceria começa com alinhamento — antes de a maleta chegar.</h2>
+          <p>O processo foi desenhado para proteger a qualidade do atendimento, as peças e a reputação de todas as envolvidas.</p>
+        </div>
+        <div class="process-grid">
+          <article class="step"><div class="step-n">1</div><h3>Você solicita a avaliação</h3><p>Conta um pouco sobre sua rotina, sua cidade e o tipo de relacionamento que mantém com clientes ou contatos.</p></article>
+          <article class="step"><div class="step-n">2</div><h3>A AuraLuz analisa o fit</h3><p>A equipe verifica região, momento, perfil de relacionamento e condições para conduzir o mostruário.</p></article>
+          <article class="step"><div class="step-n">3</div><h3>Vocês alinham as regras</h3><p>Comissão, ciclo, responsabilidade, devolução, garantia e suporte devem estar claros antes da formalização.</p></article>
+          <article class="step"><div class="step-n">4</div><h3>O mostruário entra em movimento</h3><p>Você apresenta, registra as vendas e presta contas. As peças não vendidas seguem a regra de devolução combinada.</p></article>
+        </div>
+        <div class="truth-note"><b>Consignado reduz o risco de estoque parado, mas não elimina responsabilidade.</b> A parceira continua responsável por cuidar das peças e conduzir vendas e recebimentos com organização.</div>
+      </div>
+    </section>
+
+    <section class="section showcase" id="mostruario">
+      <div class="container showcase-grid">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/poster-mostruario.jpg">
+            <source src="assets/mostruario-vertical.mp4" type="video/mp4">
+            Seu navegador não conseguiu reproduzir o vídeo do mostruário.
+          </video>
+        </div>
+        <div class="showcase-copy">
+          <div class="eyebrow">O produto que sustenta a conversa</div>
+          <h2>Um mostruário à altura da cliente que você já atende.</h2>
+          <p>A apresentação da AuraLuz combina maleta estruturada, variedade visual e peças banhadas em ouro 18K. O objetivo é facilitar uma conversa de bom gosto — não transformar seu ambiente em uma vitrine improvisada.</p>
+          <div class="quality-list">
+            <div class="quality-item"><b>Curadoria premium</b><span>Peças com leitura sofisticada para diferentes estilos e ocasiões.</span></div>
+            <div class="quality-item"><b>Experiência física</b><span>A cliente vê proporção, acabamento e combinação antes de escolher.</span></div>
+            <div class="quality-item"><b>Pronta entrega</b><span>A disponibilidade física reduz a distância entre desejo e decisão.</span></div>
+            <div class="quality-item"><b>Marca coerente</b><span>Verde profundo, dourado e apresentação que reforçam valor percebido.</span></div>
+          </div>
+          <div class="pending-proof"><strong>Prova necessária antes do tráfego:</strong> publicar especificação do banho, política de garantia, cuidados, materiais e eventuais características hipoalergênicas somente depois da validação técnica da AuraLuz.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rotinas">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Três contextos, a mesma lógica</div>
+          <h2>A oportunidade aparece onde a confiança já circula.</h2>
+          <p>A AuraLuz não procura um único “tipo de mulher”. Procura contextos nos quais uma recomendação tem credibilidade e pode acontecer com naturalidade.</p>
+        </div>
+        <div class="contexts">
+          <article class="context-card primary"><span class="tag">Atendimento e estética</span><div><h3>Eleve o valor da relação com sua cliente.</h3><p>Salas de estética, clínicas e salões já reúnem autocuidado, recorrência e confiança em um mesmo espaço.</p></div></article>
+          <article class="context-card"><span class="tag">Ambiente profissional</span><div><h3>Colegas que já conhecem seu bom gosto.</h3><p>Professoras, bancárias, servidoras e profissionais de escritório podem trabalhar a rede com respeito às regras do local.</p></div></article>
+          <article class="context-card"><span class="tag">Rede própria</span><div><h3>Relacionamento antes de alcance.</h3><p>Uma rede menor e próxima pode valer mais do que milhares de seguidores sem vínculo ou intenção de compra.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section selection" id="criterios">
+      <div class="container selection-grid">
+        <div class="selection-copy">
+          <div class="eyebrow">Parceria seletiva</div>
+          <h2>A AuraLuz procura responsabilidade, não apenas interesse.</h2>
+          <p>O cadastro é o início de uma conversa. A aprovação considera o potencial do contexto e a capacidade de cuidar bem de uma operação consignada.</p>
+          <a class="btn" href="#avaliacao">Ver formulário de avaliação</a>
+        </div>
+        <div class="criteria">
+          <article class="criterion"><i>01</i><div><h3>Atuação em uma cidade atendida</h3><p>Artur Nogueira, Campinas, Piracicaba, Limeira, Mogi Guaçu, Mogi Mirim, Hortolândia, Paulínia, Rio Claro ou Araras.</p></div></article>
+          <article class="criterion"><i>02</i><div><h3>Relacionamentos recorrentes</h3><p>Clientela, colegas ou contatos com quem você conversa com frequência e para quem a curadoria faça sentido.</p></div></article>
+          <article class="criterion"><i>03</i><div><h3>Postura consultiva</h3><p>Apresentar com elegância, ouvir preferências e respeitar uma decisão sem insistência.</p></div></article>
+          <article class="criterion"><i>04</i><div><h3>Controle e prestação de contas</h3><p>Registrar saída de peças, evitar venda fiada sem gestão, conservar o mostruário e cumprir o ciclo.</p></div></article>
+          <article class="criterion"><i>05</i><div><h3>Alinhamento cadastral</h3><p>A formalização e eventual análise cadastral acontecem em etapa posterior, com critérios e dados informados pela AuraLuz.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="duvidas">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Perguntas antes de se candidatar</div>
+          <h2>Uma boa parceria não depende de letras miúdas.</h2>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true"><span>Preciso comprar as peças para começar?</span><span aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p>Não há compra antecipada do mostruário no modelo consignado. Você recebe peças para apresentar, presta contas do que foi vendido e devolve o restante conforme as regras do ciclo.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Qual é a comissão da parceira?</span><span aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p>O percentual, as faixas e a forma de pagamento precisam ser apresentados antes da formalização. <span class="mvp-inline">MVP: inserir aqui a tabela oficial de comissão antes do tráfego.</span></p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Quanto dura cada ciclo?</span><span aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p>O prazo define apresentação, fechamento e devolução. <span class="mvp-inline">MVP: confirmar duração, datas de prestação de contas, coleta/entrega e regra de renovação.</span></p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>E se uma peça for perdida, danificada ou uma cliente não pagar?</span><span aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p>A consignação não transfere para a marca o risco de toda venda feita pela parceira. Perdas, danos, inadimplência e meios de recebimento devem seguir o contrato e o processo oficial. Evite vender fiado sem um controle claro.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>As peças têm garantia?</span><span aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p>As peças são banhadas em ouro 18K. <span class="mvp-inline">MVP: publicar prazo, cobertura, exclusões, cuidados e fluxo de troca somente após a política oficial ser aprovada.</span></p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Posso apresentar as peças no meu trabalho?</span><span aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p>Somente se as regras do seu empregador, órgão ou condomínio profissional permitirem. A AuraLuz não orienta desrespeitar políticas internas; a candidata é responsável por verificar essa permissão.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false"><span>O cadastro garante que vou receber uma maleta?</span><span aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p>Não. O cadastro é uma solicitação de avaliação e está sujeito ao fit da parceria, disponibilidade de mostruários e capacidade de atendimento na região.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section lead-section" id="avaliacao">
+      <div class="container lead-grid">
+        <div class="lead-copy">
+          <div class="eyebrow">Próximo passo</div>
+          <h2>Conte-nos sobre a rede que você já construiu.</h2>
+          <p>As respostas ajudam a equipe a priorizar perfis com contexto real para apresentar as peças e conduzir a operação com responsabilidade.</p>
+          <ul class="lead-benefits">
+            <li>Sem compromisso de aprovação.</li>
+            <li>Sem coleta de CPF nesta primeira etapa.</li>
+            <li>Contato humano após a análise de fit.</li>
+          </ul>
+        </div>
+
+        <form class="form-card" id="leadForm" novalidate>
+          <h3>Solicitação de avaliação</h3>
+          <p>Campos com * são necessários para analisar a parceria.</p>
+
+          <input type="hidden" id="utm_source" name="utm_source">
+          <input type="hidden" id="utm_medium" name="utm_medium">
+          <input type="hidden" id="utm_campaign" name="utm_campaign">
+          <input type="hidden" id="utm_content" name="utm_content">
+          <input type="hidden" id="utm_term" name="utm_term">
+          <input type="hidden" id="campaign_id" name="campaign_id">
+          <input type="hidden" id="adset_id" name="adset_id">
+          <input type="hidden" id="ad_id" name="ad_id">
+          <input type="hidden" id="fbclid" name="fbclid">
+          <input type="hidden" id="lead_score" name="lead_score">
+          <input type="hidden" id="lead_tier" name="lead_tier">
+
+          <div class="fields">
+            <div class="field"><label for="nome">Seu nome *</label><input id="nome" name="nome" autocomplete="name" required placeholder="Como podemos chamar você?"></div>
+            <div class="field"><label for="whatsapp">WhatsApp *</label><input id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" required placeholder="(00) 00000-0000"></div>
+            <div class="field full"><label for="cidade">Cidade onde você atuaria *</label><select id="cidade" name="cidade" required><option value="">Selecione</option><option>Artur Nogueira</option><option>Campinas</option><option>Piracicaba</option><option>Limeira</option><option>Mogi Guaçu</option><option>Mogi Mirim</option><option>Hortolândia</option><option>Paulínia</option><option>Rio Claro</option><option>Araras</option><option value="outra">Outra cidade</option></select></div>
+            <div class="field full"><label for="contexto">Qual opção melhor descreve sua rotina? *</label><select id="contexto" name="contexto" required><option value="">Selecione</option><option value="clientes">Tenho espaço/serviço com clientela recorrente</option><option value="profissional">Trabalho em escola, banco, órgão público ou escritório</option><option value="autonoma">Sou autônoma e mantenho uma rede ativa de clientes</option><option value="revenda">Já vendo produtos para uma carteira de clientes</option><option value="rede">Não trabalho com vendas, mas tenho uma rede ativa</option><option value="inicio">Ainda estou formando minha rede</option></select></div>
+            <div class="field"><label for="rede">Com quantas pessoas da sua rede você mantém contato por mês? *</label><select id="rede" name="rede" required><option value="">Selecione</option><option value="ate10">Até 10</option><option value="11a30">11 a 30</option><option value="31a60">31 a 60</option><option value="mais60">Mais de 60</option></select></div>
+            <div class="field"><label for="disponibilidade">Tempo semanal para a parceria *</label><select id="disponibilidade" name="disponibilidade" required><option value="">Selecione</option><option value="menos1">Menos de 1 hora</option><option value="1a3">1 a 3 horas</option><option value="mais3">Mais de 3 horas</option></select></div>
+            <div class="field full"><label for="apresentacao">Onde ou como você imagina apresentar as peças? *</label><textarea id="apresentacao" name="apresentacao" required placeholder="Ex.: na minha sala de estética, em atendimentos, para colegas, por indicação e WhatsApp…"></textarea></div>
+            <div class="field"><label for="experiencia">Já vendeu algum produto antes?</label><select id="experiencia" name="experiencia"><option value="nao">Ainda não</option><option value="sim">Sim</option><option value="atual">Já vendo atualmente</option></select></div>
+            <div class="field"><label for="momento">Quando gostaria de começar? *</label><select id="momento" name="momento" required><option value="">Selecione</option><option value="agora">Assim que for aprovada</option><option value="30dias">Nos próximos 30 dias</option><option value="pesquisa">Ainda estou pesquisando</option></select></div>
+            <div class="field full checks">
+              <label class="check"><input id="responsabilidade" name="responsabilidade" type="checkbox" required><span>Entendo que uma maleta consignada exige cuidado com as peças, registro de vendas e prestação de contas nas datas combinadas. *</span></label>
+              <label class="check"><input id="privacidade" name="privacidade" type="checkbox" required><span>Autorizo a AuraLuz a usar estes dados para avaliar meu perfil e entrar em contato sobre a parceria. Posso solicitar correção ou exclusão pelos canais oficiais da marca. *</span></label>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary" type="submit">Enviar para avaliação <span aria-hidden="true">→</span></button>
+              <p class="privacy-note">Não solicitamos CPF, renda, dados bancários ou documentos nesta etapa. A política de privacidade e o contato do responsável pelos dados devem ser publicados antes do tráfego.</p>
+              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section production" id="producao-necessaria" data-mvp-only>
+      <div class="container">
+        <div class="mvp-banner"><b>Somente MVP</b><span>Este bloco orienta a produção. Remover ou ocultar antes de publicar a LP para tráfego.</span></div>
+        <div class="section-head">
+          <div class="eyebrow">O que falta produzir</div>
+          <h2>A imagem da marca já existe. Agora a operação precisa ser provada.</h2>
+          <p>Os ativos atuais demonstram maleta e variedade, mas ainda não comprovam a experiência da parceira, o acabamento em detalhe, o suporte nem as regras do consignado.</p>
+        </div>
+        <div class="production-grid">
+          <article class="production-card"><div class="production-visual"><div><div class="camera">◎</div><b>Parceira em contexto real</b></div></div><div class="production-body"><h3>Hero definitivo</h3><p>Profissional madura em sala de estética, escritório ou ambiente neutro, apresentando a maleta com naturalidade. Deixar respiro à esquerda para a headline.</p><div class="spec">Desktop 1920 × 1200 · mobile 1080 × 1350 · sem texto embutido</div></div></article>
+          <article class="production-card"><div class="production-visual"><div><div class="camera">◎</div><b>2–3 casos reais</b></div></div><div class="production-body"><h3>Prova social qualificada</h3><p>Nome, cidade, ocupação, insegurança inicial, como apresenta e resultado qualitativo verificável. Se usar números, informar período e se são vendas ou comissão.</p><div class="spec">Retrato 4:5 + vídeo vertical 25–45 s · autorização assinada</div></div></article>
+          <article class="production-card"><div class="production-visual"><div><div class="camera">◎</div><b>Macro + uso no corpo</b></div></div><div class="production-body"><h3>Qualidade perceptível</h3><p>Fecho, banho, pedras, verso, espessura e proporção no corpo. Fotografar os mesmos SKUs em produto e em uso.</p><div class="spec">Macro 2000 × 2000 · corpo 4:5 · 6–10 SKUs representativos</div></div></article>
+          <article class="production-card"><div class="production-visual"><img src="assets/mostruario-horizontal.jpeg" alt="Mostruário AuraLuz existente"></div><div class="production-body"><h3>Maleta sem embalagem plástica</h3><p>Repetir o plano aberto atual com todas as peças desembaladas, etiquetas discretas e iluminação que revele o dourado sem estourar reflexos.</p><div class="spec">Horizontal 1920 × 1200 · vertical 1080 × 1350 · flat lay 1600 × 1600</div></div></article>
+          <article class="production-card"><div class="production-visual"><div><div class="camera">◎</div><b>Ciclo real da operação</b></div></div><div class="production-body"><h3>Entrega, controle e fechamento</h3><p>Conferência da maleta, registro de peças, suporte, reposição e prestação de contas, sem expor dados de clientes.</p><div class="spec">8 fotos + vídeo horizontal/vertical de 30–45 s</div></div></article>
+          <article class="production-card"><div class="production-visual"><img src="assets/logo-auraluz.jpg" alt="Logo atual da AuraLuz"></div><div class="production-body"><h3>Identidade em alta resolução</h3><p>O logo atual tem apenas 120 × 120 px. Solicitar versão vetorial, monograma isolado, versão horizontal, dourada, branca e verde.</p><div class="spec">SVG/PDF vetorial + PNG transparente em 2048 px</div></div></article>
+          <article class="production-card"><div class="production-visual"><div><div class="camera">◎</div><b>Prova técnica</b></div></div><div class="production-body"><h3>Banho e garantia</h3><p>Documentar camada/espessura quando aplicável, metais, níquel, cuidados, prazo e cobertura da garantia. Não inferir “hipoalergênico”.</p><div class="spec">Ficha técnica oficial + certificado/cartão fotografado</div></div></article>
+          <article class="production-card"><div class="production-visual"><div><div class="camera">◎</div><b>Suporte de venda</b></div></div><div class="production-body"><h3>O que acompanha a parceira</h3><p>Fotos, embalagens, catálogo, meios de pagamento, treinamento e contato de suporte. Mostrar somente o que realmente é entregue.</p><div class="spec">Gravação de tela 12–18 s + flat lay do kit de apoio</div></div></article>
+          <article class="production-card"><div class="production-visual"><div><div class="camera">◎</div><b>Dados comerciais</b></div></div><div class="production-body"><h3>Comissão e regras</h3><p>Validar percentuais, faixas, ciclo, perdas, inadimplência, troca, devolução, regiões, limite de maletas e prazo de contato.</p><div class="spec">Documento aprovado pela operação e jurídico antes da publicação</div></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><div class="footer-brand">AuraLuz Semijoias</div><p>Artur Nogueira e região · contato oficial a inserir</p></div>
+      <p>© <span id="year"></span> AuraLuz. Cadastro sujeito à análise.</p>
+    </div>
+  </footer>
+
+  <a class="mobile-cta" href="#avaliacao">Solicitar avaliação</a>
+
+  <script>
+    const ROUTING_ENDPOINT = '';
+    const WHATSAPP_NUMBER = '';
+    const PRIVACY_POLICY_URL = '';
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const params = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','campaign_id','adset_id','ad_id','fbclid'].forEach(key => {
+      const field = document.getElementById(key);
+      if (field) field.value = params.get(key) || '';
+    });
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const open = item.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+    });
+
+    const phone = document.getElementById('whatsapp');
+    phone.addEventListener('input', event => {
+      let value = event.target.value.replace(/\D/g, '').slice(0, 11);
+      if (value.length > 10) value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      else if (value.length > 6) value = value.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      else if (value.length > 2) value = value.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+      else if (value.length) value = value.replace(/^(\d{0,2})$/, '($1');
+      event.target.value = value;
+    });
+
+    const readCookie = name => document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=').slice(1).join('=') || '';
+
+    function scoreLead(form) {
+      let score = 0;
+      if (form.cidade.value && form.cidade.value !== 'outra') score += 2;
+      if (['clientes','profissional','autonoma'].includes(form.contexto.value)) score += 3;
+      else if (['revenda','rede'].includes(form.contexto.value)) score += 2;
+      const networkScore = { ate10: 0, '11a30': 2, '31a60': 3, mais60: 4 };
+      score += networkScore[form.rede.value] || 0;
+      if (form.disponibilidade.value === '1a3') score += 2;
+      if (form.disponibilidade.value === 'mais3') score += 3;
+      if (form.apresentacao.value.trim().length >= 30) score += 2;
+      if (form.experiencia.value === 'sim') score += 1;
+      if (form.experiencia.value === 'atual') score += 2;
+      if (form.momento.value === 'agora') score += 2;
+      if (form.momento.value === '30dias') score += 1;
+      if (form.responsabilidade.checked) score += 3;
+      return { score, tier: score >= 13 ? 'A' : score >= 9 ? 'B' : 'C' };
+    }
+
+    const form = document.getElementById('leadForm');
+    const status = document.getElementById('formStatus');
+    const mobileCta = document.querySelector('.mobile-cta');
+    if ('IntersectionObserver' in window) {
+      const formObserver = new IntersectionObserver(entries => {
+        mobileCta.classList.toggle('hidden', entries[0].isIntersecting);
+      }, { threshold: 0.08 });
+      formObserver.observe(document.getElementById('avaliacao'));
+    }
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const classification = scoreLead(form);
+      document.getElementById('lead_score').value = classification.score;
+      document.getElementById('lead_tier').value = classification.tier;
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      const fbclid = document.getElementById('fbclid').value;
+      const lead = {
+        ...data,
+        created_at: new Date().toISOString(),
+        source_lp: 'LP Recrutamento AuraLuz',
+        offer: 'Parceria consignada AuraLuz',
+        page_url: location.href,
+        fbp: readCookie('_fbp'),
+        fbc: readCookie('_fbc') || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : ''),
+        privacy_policy_url: PRIVACY_POLICY_URL
+      };
+
+      if (!ROUTING_ENDPOINT) {
+        status.classList.add('show');
+        status.textContent = 'MVP validado: o formulário está calculando o fit e capturando UTMs, mas ainda não envia dados. Configure ROUTING_ENDPOINT, WhatsApp e política de privacidade antes do tráfego.';
+        console.info('Prévia de lead AuraLuz', lead);
+        return;
+      }
+
+      status.classList.add('show');
+      status.textContent = 'Enviando sua solicitação…';
+      try {
+        const response = await fetch(ROUTING_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(lead)
+        });
+        if (!response.ok) throw new Error('Falha no envio');
+        status.textContent = 'Solicitação recebida. A equipe AuraLuz analisará suas respostas e entrará em contato se houver aderência e disponibilidade na sua região.';
+        form.reset();
+        if (WHATSAPP_NUMBER) {
+          const message = encodeURIComponent('Olá, AuraLuz. Acabei de enviar minha solicitação de avaliação para a parceria.');
+          setTimeout(() => location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, 900);
+        }
+      } catch (error) {
+        status.textContent = 'Não foi possível enviar agora. Tente novamente ou fale com a AuraLuz pelo canal oficial.';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#293529">
+  <title>Briefing de Produção | AuraLuz Semijoias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --forest:#293529;--forest2:#354435;--deep:#172017;--sage:#aeb6a3;--sage2:#dfe3d9;
+      --ivory:#f7f3eb;--paper:#fffdf8;--gold:#c6a55f;--gold2:#eadbb6;--ink:#1d211c;
+      --muted:#64695f;--line:rgba(41,53,41,.16);--warn:#8a493d;--serif:"Italiana",Georgia,serif;
+      --sans:"DM Sans",Arial,sans-serif
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-snap-type:y proximity}body{margin:0;background:#dedfd9;color:var(--ink);font-family:var(--sans);line-height:1.45;-webkit-font-smoothing:antialiased}
+    img,video{display:block;max-width:100%}button{font:inherit}.deck{padding:18px 0 70px}.slide{position:relative;display:flex;width:min(1180px,calc(100% - 32px));min-height:720px;margin:0 auto 22px;overflow:hidden;border-radius:4px;background:var(--paper);box-shadow:0 18px 55px rgba(23,32,23,.13);scroll-snap-align:start}
+    .slide-inner{display:flex;width:100%;padding:88px 78px 65px;flex-direction:column;justify-content:center}.header{position:absolute;z-index:4;top:28px;right:34px;left:34px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:.67rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.header .brand{display:flex;align-items:center;gap:10px;color:var(--forest)}.header img{width:38px;height:38px;border-radius:50%;object-fit:cover}.page{position:absolute;right:34px;bottom:22px;color:var(--sage);font-size:.72rem;font-weight:800;letter-spacing:.12em}.kicker{margin-bottom:12px;color:var(--forest2);font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.kicker:before{display:inline-block;width:24px;height:1px;margin:0 9px 3px 0;background:var(--gold);content:""}
+    h1,h2{margin:0 0 22px;font-family:var(--serif);font-weight:400;letter-spacing:-.03em;line-height:1.04}h1{font-size:clamp(3.6rem,6vw,6rem)}h2{font-size:clamp(2.6rem,4.1vw,4.15rem)}h3{margin:0 0 9px;font-size:1.02rem;line-height:1.28}p{margin:0 0 12px;color:var(--muted);font-size:1rem}.lead{max-width:780px;font-size:1.22rem}.gold{color:var(--gold)}.em{display:inline;padding:0 .1em;background:linear-gradient(transparent 62%,var(--gold2) 62%)}
+    .grid2{display:grid;align-items:center;gap:46px;grid-template-columns:1fr 1fr}.grid3{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}.grid4{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}.split65{grid-template-columns:1.18fr .82fr}.split40{grid-template-columns:.78fr 1.22fr}.top{align-items:start}
+    .cover{background:var(--deep);color:white}.cover:after{position:absolute;right:-120px;bottom:-210px;width:520px;height:520px;border:1px solid rgba(234,219,182,.28);border-radius:50%;content:""}.cover .slide-inner{position:relative;z-index:2;width:60%;background:linear-gradient(90deg,var(--deep) 76%,rgba(23,32,23,0))}.cover .cover-photo{position:absolute;inset:0 0 0 43%;width:57%;height:100%;object-fit:cover;opacity:.76}.cover h1{font-size:5.4rem}.cover p{color:rgba(255,255,255,.72)}.cover .header{color:rgba(255,255,255,.62)}.cover .header .brand{color:white}.pill{display:inline-flex;align-self:flex-start;margin-top:18px;padding:10px 16px;border:1px solid rgba(234,219,182,.4);border-radius:999px;color:var(--gold2);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .card{min-height:145px;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--ivory)}.card.dark{border-color:var(--forest);background:var(--forest);color:white}.card.dark p,.card.dark li{color:rgba(255,255,255,.7)}.card.goldcard{border-color:var(--gold);background:#f3ead5}.num{margin-bottom:12px;color:var(--gold);font-family:var(--serif);font-size:2.05rem}.tag{display:inline-block;margin:0 5px 8px 0;padding:5px 8px;border-radius:999px;background:var(--forest);color:white;font-size:.61rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.tag.goldtag{background:var(--gold);color:var(--deep)}.tag.warn{background:var(--warn)}
+    ul{margin:0;padding:0;list-style:none}li{position:relative;margin:8px 0;padding-left:20px;color:var(--muted);font-size:.91rem}li:before{position:absolute;left:0;color:var(--gold);content:"◇"}.dark-panel{padding:26px;border-left:5px solid var(--gold);background:var(--forest);color:white}.dark-panel p,.dark-panel li{color:rgba(255,255,255,.74)}.note{padding:15px 18px;border:1px dashed var(--gold);border-radius:12px;background:#fffaf0;color:var(--muted);font-size:.82rem}.warn-note{border-color:var(--warn);background:#fbefec;color:#6f3c32}
+    .photo{position:relative;overflow:hidden;border-radius:18px;background:var(--sage2)}.photo img{width:100%;height:100%;object-fit:cover}.photo .caption{position:absolute;right:0;bottom:0;left:0;padding:48px 16px 14px;background:linear-gradient(transparent,rgba(15,21,15,.88));color:white;font-size:.72rem}.photo .photo-tag{position:absolute;top:12px;left:12px;padding:6px 9px;border-radius:999px;background:var(--gold);color:var(--deep);font-size:.62rem;font-weight:800;text-transform:uppercase}.photo.tall{height:500px}.photo.medium{height:330px}.photo.short{height:210px}.photo-grid{display:grid;gap:12px;grid-template-columns:1fr 1fr}.photo-grid .wide{grid-column:1/-1}
+    .format{display:grid;align-items:center;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);grid-template-columns:62px 1fr}.format:last-child{border:0}.frame{display:grid;width:58px;height:39px;place-items:center;border:2px solid var(--forest);font-size:.64rem;font-weight:800}.frame.vertical{width:29px;height:51px;margin-left:14px}.format b{display:block;margin-bottom:2px;color:var(--forest)}.format p{margin:0;font-size:.81rem}
+    .shot{display:grid;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);grid-template-columns:40px 1fr}.shot:last-child{border:0}.shot-n{display:grid;width:38px;height:38px;place-items:center;border-radius:50%;background:var(--forest);color:var(--gold2);font-weight:800}.shot p{margin:0;font-size:.82rem}.spec{margin-top:9px;color:var(--forest);font-size:.7rem;font-weight:800;letter-spacing:.02em}
+    .matrix{width:100%;border-collapse:collapse;font-size:.73rem}.matrix th{padding:10px;border-bottom:2px solid var(--forest);color:var(--forest);text-align:left}.matrix td{padding:10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}.matrix td:first-child{color:var(--forest);font-weight:800}.matrix .p1{color:var(--warn);font-weight:800}.matrix .p2{color:#8b6f2e;font-weight:800}
+    .timeline{display:grid;gap:12px;grid-template-columns:repeat(4,1fr)}.phase{position:relative;padding:22px 18px 18px;border-top:5px solid var(--forest);background:var(--ivory)}.phase.accent{border-color:var(--gold);background:#f3ead5}.phase small{display:block;margin-bottom:18px;color:var(--gold);font-weight:800}.phase p{font-size:.79rem}.checklist{display:grid;gap:8px;grid-template-columns:1fr 1fr}.check{padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--muted);font-size:.78rem}.check:before{margin-right:8px;color:var(--gold);content:"□"}
+    .controls{position:fixed;z-index:20;right:18px;bottom:18px;display:flex;align-items:center;gap:8px;padding:8px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(23,32,23,.88);backdrop-filter:blur(10px)}.controls button{display:grid;width:34px;height:34px;place-items:center;border:0;border-radius:50%;background:transparent;color:white;cursor:pointer}.controls button:hover{background:rgba(255,255,255,.12)}.controls span{min-width:50px;color:var(--gold2);font-size:.72rem;font-weight:800;text-align:center}
+    @media(max-width:800px){html{scroll-snap-type:none}.deck{padding-top:8px}.slide{width:calc(100% - 16px);min-height:auto;margin-bottom:10px;border-radius:0}.slide-inner{padding:78px 24px 50px}.header{top:20px;right:18px;left:18px;font-size:.54rem}.header img{width:30px;height:30px}.header>span:last-child{display:none}.page{right:18px;bottom:14px}.cover .slide-inner{width:100%;padding-top:160px;background:linear-gradient(0deg,var(--deep) 0%,rgba(23,32,23,.85) 65%,rgba(23,32,23,.1) 100%)}.cover .cover-photo{inset:0;width:100%;height:100%;opacity:.62}.cover h1{font-size:3.5rem}.grid2,.grid3,.grid4,.split65,.split40,.timeline{grid-template-columns:1fr}.photo.tall{height:430px}.photo.medium{height:280px}.matrix{display:block;overflow-x:auto}.checklist{grid-template-columns:1fr}.controls{right:10px;bottom:10px}}
+    @media print{body{background:white}.deck{padding:0}.slide{width:297mm;height:210mm;min-height:210mm;margin:0;border-radius:0;box-shadow:none;page-break-after:always}.slide-inner{padding:22mm 20mm 17mm}.controls{display:none}@page{size:A4 landscape;margin:0}}
+  </style>
+</head>
+<body>
+<main class="deck">
+  <section class="slide cover" id="slide-1" data-slide>
+    <img class="cover-photo" src="../assets/mostruario-horizontal-2.jpeg" alt="Mostruário e maleta AuraLuz">
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>Briefing de produção da landing page</span></div>
+    <div class="slide-inner">
+      <div class="kicker" style="color:var(--gold2)">MVP + plano de captação</div>
+      <h1>Imagens que <span class="gold">qualificam.</span><br>Provas que convertem.</h1>
+      <p class="lead">Informações, fotos e vídeos necessários para transformar o MVP de recrutamento em uma landing page pronta para tráfego.</p>
+      <span class="pill">AuraLuz Semijoias · Consignação premium</span>
+    </div><span class="page">01 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-2" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>01 · Diagnóstico atual</span></div>
+    <div class="slide-inner">
+      <div class="kicker">O que já existe</div><h2>A marca já tem estética. Falta transformar a operação em <span class="em">evidência.</span></h2>
+      <div class="grid4">
+        <article class="card"><div class="num">3</div><h3>fotos aproveitáveis</h3><p>Maleta, variedade e apresentação geral do mostruário.</p></article>
+        <article class="card"><div class="num">2</div><h3>vídeos disponíveis</h3><p>Um tour de produto e um criativo vertical com presença humana.</p></article>
+        <article class="card"><div class="num">1</div><h3>identidade definida</h3><p>Verde profundo, dourado, marfim e posicionamento premium.</p></article>
+        <article class="card dark"><div class="num">0</div><h3>casos completos</h3><p>Ainda não há depoimento verificável, prova operacional ou ficha técnica.</p></article>
+      </div>
+      <div class="grid2 top" style="margin-top:24px"><div><h3>O acervo atual já ajuda a mostrar</h3><ul><li>variedade percebida;</li><li>maleta estruturada;</li><li>design e leitura premium;</li><li>coerência visual da marca.</li></ul></div><div><h3>A nova captação precisa provar</h3><ul><li>quem é a parceira ideal na vida real;</li><li>como o ciclo consignado funciona;</li><li>qualidade técnica e garantia;</li><li>suporte, comissão e prestação de contas.</li></ul></div></div>
+    </div><span class="page">02 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-3" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>02 · Informações obrigatórias</span></div>
+    <div class="slide-inner">
+      <div class="kicker">Antes de dirigir tráfego</div><h2>A dona da AuraLuz precisa confirmar <span class="em">as regras da parceria.</span></h2>
+      <div class="grid3">
+        <article class="card goldcard"><span class="tag warn">Prioridade 1</span><h3>Comissão</h3><p>Percentual base, faixas por vendas, quando e como a parceira recebe.</p></article>
+        <article class="card goldcard"><span class="tag warn">Prioridade 1</span><h3>Ciclo</h3><p>Duração, fechamento, devolução, renovação, coleta e reposição.</p></article>
+        <article class="card goldcard"><span class="tag warn">Prioridade 1</span><h3>Responsabilidade</h3><p>Perda, dano, furto, inadimplência, venda fiada e meios de pagamento.</p></article>
+        <article class="card"><span class="tag">Produto</span><h3>Banho e garantia</h3><p>Camada/espessura quando aplicável, materiais, níquel, cobertura, exclusões e cuidados.</p></article>
+        <article class="card"><span class="tag">Operação</span><h3>O que acompanha</h3><p>Embalagens, catálogo, fotos, treinamento, suporte e sistema de controle.</p></article>
+        <article class="card"><span class="tag">Capacidade</span><h3>Atendimento regional</h3><p>Cidades, limite de maletas, prazo de resposta e responsável por cada lead.</p></article>
+      </div>
+      <div class="note warn-note" style="margin-top:20px"><strong>Não publicar números de renda sem contexto.</strong> Definir se R$ 1.500–2.000 e o pico de R$ 6.000 são vendas brutas, por qual período e em quantas parceiras. Comissão nunca deve ser confundida com volume vendido.</div>
+    </div><span class="page">03 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-4" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>03 · Padrão técnico</span></div>
+    <div class="slide-inner">
+      <div class="grid2 split65">
+        <div><div class="kicker">Produzir uma vez, entregar para cada tela</div><h2>Gravar horizontal e vertical <span class="em">separadamente.</span></h2><p class="lead">Um corte automático não substitui enquadramento. A composição precisa preservar rosto, mãos, maleta e joias em cada formato.</p><div class="dark-panel" style="margin-top:22px"><h3>Regras gerais</h3><ul><li>luz neutra e pele natural;</li><li>sem filtro que altere a cor do banho;</li><li>versão limpa, sem texto embutido;</li><li>áudio original separado quando possível;</li><li>legendas sempre dentro da safe area.</li></ul></div></div>
+        <div>
+          <div class="format"><div class="frame">8:5</div><p><b>Hero desktop</b>1920 × 1200 px, pessoa/produto à direita e respiro à esquerda.</p></div>
+          <div class="format"><div class="frame vertical">4:5</div><p><b>Hero mobile</b>1080 × 1350 px, sem cortar rosto, mãos ou maleta.</p></div>
+          <div class="format"><div class="frame">16:9</div><p><b>Vídeo horizontal</b>1920 × 1080, 12–45 s conforme o roteiro.</p></div>
+          <div class="format"><div class="frame vertical">9:16</div><p><b>Vídeo vertical</b>1080 × 1920, rosto no terço superior e produto visível.</p></div>
+          <div class="format"><div class="frame">1:1</div><p><b>Produto e composição</b>mínimo 1600 × 1600; macros com 2000 px ou mais.</p></div>
+        </div>
+      </div>
+    </div><span class="page">04 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-5" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>04 · Hero definitivo</span></div>
+    <div class="slide-inner">
+      <div class="grid2 split40">
+        <div><div class="kicker">Imagem que seleciona o perfil</div><h2>Mostrar uma mulher que já transmite <span class="em">confiança profissional.</span></h2><p>A hero não deve parecer anúncio de renda fácil. Ela precisa representar competência, relacionamento e elegância.</p><div class="shot"><div class="shot-n">1</div><div><h3>Ambiente</h3><p>Sala de estética real, escritório sofisticado ou cenário neutro de atendimento.</p></div></div><div class="shot"><div class="shot-n">2</div><div><h3>Ação</h3><p>Parceira abre a maleta ou apresenta uma peça — sem pose de catálogo.</p></div></div><div class="shot"><div class="shot-n">3</div><div><h3>Expressão</h3><p>Segura, receptiva e profissional; roupa coerente com a rotina.</p></div></div><div class="spec">Entregar: 2 fotos 8:5 + 2 fotos 4:5 + 6 variações de gesto/olhar.</div></div>
+        <div class="photo tall"><img src="../assets/maleta-fechada.jpeg" alt="Maleta AuraLuz em cenário de produto"><span class="photo-tag">Referência atual</span><div class="caption">A maleta e a paleta funcionam. Falta inserir uma parceira real e criar respiro para a headline.</div></div>
+      </div>
+    </div><span class="page">05 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-6" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>05 · Produto e acabamento</span></div>
+    <div class="slide-inner">
+      <div class="kicker">A qualidade precisa aparecer sem adjetivo</div><h2>Fotografar o que sustenta a leitura de <span class="em">semijoia premium.</span></h2>
+      <div class="grid3 top">
+        <div><div class="photo medium"><img src="../assets/mostruario-horizontal.jpeg" alt="Mostruário AuraLuz"><span class="photo-tag">Refazer</span><div class="caption">Plano aberto atual: variedade boa, peças ainda embaladas.</div></div><p class="spec">Nova versão: todas as peças desembaladas, etiquetas discretas e luz sem reflexo estourado.</p></div>
+        <div><div class="card" style="min-height:330px"><h3>Macros obrigatórios</h3><ul><li>frente e verso;</li><li>fechos, pinos e soldas;</li><li>cravação e acabamento;</li><li>textura e espessura;</li><li>detalhe do banho;</li><li>cartão/certificado de garantia.</li></ul><div class="note" style="margin-top:18px">Selecionar 6–10 SKUs representativos e usar os mesmos itens nas fotos no corpo.</div></div><p class="spec">Mínimo 2000 × 2000 px · fundo neutro · foco preciso.</p></div>
+        <div><div class="card dark" style="min-height:330px"><h3>Uso no corpo</h3><ul><li>brinco: rosto + close da orelha;</li><li>colar: colo completo + detalhe;</li><li>pulseira: pulso em movimento;</li><li>anel: mão natural, sem esconder proporção;</li><li>combinações de 2–3 peças;</li><li>tons de pele diferentes quando possível.</li></ul></div><p class="spec">4:5 e 1:1 · versões com respiro para texto.</p></div>
+      </div>
+    </div><span class="page">06 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-7" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>06 · Maleta e experiência</span></div>
+    <div class="slide-inner">
+      <div class="grid2 split40">
+        <div class="photo-grid"><div class="photo short wide"><img src="../assets/mostruario-horizontal-2.jpeg" alt="Mostruário aberto AuraLuz"><span class="photo-tag">Acervo atual</span></div><div class="photo short"><img src="../assets/maleta-fechada.jpeg" alt="Maleta fechada AuraLuz"></div><div class="photo short"><img src="../assets/poster-mostruario.jpg" alt="Vídeo do mostruário AuraLuz"></div></div>
+        <div><div class="kicker">O mecanismo da parceria</div><h2>A maleta deve parecer <span class="em">organizada, desejável e controlável.</span></h2><div class="shot"><div class="shot-n">1</div><div><h3>Maleta fechada</h3><p>Marca, tamanho, alça e acabamento exterior.</p></div></div><div class="shot"><div class="shot-n">2</div><div><h3>Abertura contínua</h3><p>Do lacre/fecho até todas as categorias visíveis, sem cortes que escondam quantidade.</p></div></div><div class="shot"><div class="shot-n">3</div><div><h3>Organização interna</h3><p>Como os SKUs são separados, identificados e conferidos.</p></div></div><div class="shot"><div class="shot-n">4</div><div><h3>Escala real</h3><p>Maleta na mão, sobre a mesa e integrada ao ambiente profissional.</p></div></div><div class="spec">Fotos: 8 planos · vídeo 16:9 e 9:16 de 18–25 s · uma tomada contínua.</div></div>
+      </div>
+    </div><span class="page">07 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-8" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>07 · Prova social</span></div>
+    <div class="slide-inner">
+      <div class="kicker">As seis parceiras atuais são a melhor fonte</div><h2>Captar histórias que expliquem <span class="em">por que funciona.</span></h2>
+      <div class="grid3 top">
+        <article class="card"><span class="tag goldtag">Caso 1</span><h3>Profissional de estética</h3><p>Como o mostruário entrou na rotina sem atrapalhar o atendimento e que tipo de cliente se interessou.</p></article>
+        <article class="card"><span class="tag goldtag">Caso 2</span><h3>Professora, bancária ou servidora</h3><p>Como apresenta sem ser insistente e como respeita as regras do ambiente profissional.</p></article>
+        <article class="card"><span class="tag goldtag">Caso 3</span><h3>Maior consistência</h3><p>Como organiza peças, recebimentos, pós-venda e prestação de contas ao longo dos ciclos.</p></article>
+      </div>
+      <div class="grid2 top" style="margin-top:22px"><div class="dark-panel"><h3>Roteiro de entrevista — 5 perguntas</h3><ul><li>O que fez você considerar a parceria?</li><li>Qual era sua insegurança antes de começar?</li><li>Para quem e como você apresenta as peças?</li><li>O que mais ajuda na rotina?</li><li>Que conselho daria a uma candidata semelhante?</li></ul></div><div><h3>Prova segura</h3><ul><li>nome, cidade e ocupação autorizados;</li><li>ambiente real, áudio limpo e fala natural;</li><li>resultado qualitativo antes de faturamento;</li><li>se houver número: período + vendas brutas ou comissão;</li><li>termo de autorização de imagem e voz.</li></ul><div class="note warn-note"><strong>Nunca:</strong> inventar depoimento, usar “renda garantida” ou apresentar o melhor caso como resultado típico.</div></div></div>
+    </div><span class="page">08 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-9" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>08 · Prova operacional</span></div>
+    <div class="slide-inner">
+      <div class="grid2 split65">
+        <div><div class="kicker">O bastidor reduz o medo</div><h2>Mostrar o ciclo de uma maleta <span class="em">do início ao fechamento.</span></h2><div class="timeline"><div class="phase accent"><small>01</small><h3>Montagem</h3><p>Seleção, etiqueta, conferência e registro das peças.</p></div><div class="phase"><small>02</small><h3>Entrega</h3><p>Orientação da parceira e conferência conjunta.</p></div><div class="phase"><small>03</small><h3>Suporte</h3><p>Dúvidas, reposição, troca e material de divulgação.</p></div><div class="phase"><small>04</small><h3>Fechamento</h3><p>Prestação de contas, devolução e renovação.</p></div></div><div class="dark-panel" style="margin-top:22px"><h3>Vídeo principal da operação</h3><p>Uma sequência contínua de 30–45 segundos, gravada horizontal e verticalmente. Mostrar mãos e processo; ocultar CPF, endereço, telefone e dados de clientes.</p></div></div>
+        <div><div class="card" style="min-height:450px"><h3>Planos necessários</h3><ul><li>estoque/maletas disponíveis;</li><li>separação por categoria;</li><li>leitura ou registro do SKU;</li><li>conferência item a item;</li><li>entrega e explicação do ciclo;</li><li>tela do controle sem dados pessoais;</li><li>peças devolvidas e vendidas separadas;</li><li>fechamento da prestação de contas;</li><li>nova seleção/reposição.</li></ul><p class="spec">Entregar 10–14 fotos + 2 vídeos limpos + 6 takes B-roll.</p></div></div>
+      </div>
+    </div><span class="page">09 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-10" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>09 · Vídeos para anúncio e LP</span></div>
+    <div class="slide-inner">
+      <div class="kicker">Gravar por território, não por estereótipo</div><h2>Quatro roteiros, cada um com uma <span class="em">razão de parceria.</span></h2>
+      <div class="grid4 top">
+        <article class="card"><span class="tag goldtag">V1 · 25–35 s</span><h3>Confiança construída</h3><p>“Você já construiu confiança. Ela pode abrir uma nova fonte de receita.”</p><div class="spec">Professora, bancária, servidora ou escritório.</div></article>
+        <article class="card"><span class="tag goldtag">V2 · 25–35 s</span><h3>Valor por cliente</h3><p>Mostrar como o mostruário complementa a experiência em estética ou beleza.</p><div class="spec">Parceira real no próprio espaço.</div></article>
+        <article class="card"><span class="tag goldtag">V3 · 18–25 s</span><h3>Curadoria premium</h3><p>Macro, uso no corpo, maleta e mecanismo do consignado, com voz da marca.</p><div class="spec">Produto + narração + CTA.</div></article>
+        <article class="card dark"><span class="tag goldtag">V4 · 30–45 s</span><h3>Como funciona</h3><p>Avaliação, alinhamento, recebimento, venda e fechamento do ciclo.</p><div class="spec">Usar na LP e remarketing.</div></article>
+      </div>
+      <div class="grid2 top" style="margin-top:22px"><div class="note warn-note"><strong>Regravar/editar o criativo atual:</strong> retirar “a beleza vende sozinha”, “venda garantida”, “mina de ouro”, ataques a outros produtos e valores fixos como promessa.</div><div class="note"><strong>Final de todos os vídeos:</strong> “A AuraLuz seleciona novas parceiras em cidades atendidas. Cadastro sujeito à análise e disponibilidade.”</div></div>
+    </div><span class="page">10 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-11" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>10 · Matriz de entregáveis</span></div>
+    <div class="slide-inner">
+      <div class="kicker">Resumo para orçamento e produção</div><h2>O pacote mínimo para a <span class="em">primeira versão publicada.</span></h2>
+      <table class="matrix">
+        <thead><tr><th>Frente</th><th>Fotos</th><th>Vídeos</th><th>Formato</th><th>Prioridade</th></tr></thead>
+        <tbody>
+          <tr><td>Hero com parceira</td><td>4 principais + 6 variações</td><td>6 takes B-roll</td><td>8:5, 4:5, 16:9, 9:16</td><td class="p1">P1</td></tr>
+          <tr><td>Maleta e mostruário</td><td>8 planos</td><td>2 aberturas contínuas</td><td>Horizontal + vertical</td><td class="p1">P1</td></tr>
+          <tr><td>Produto premium</td><td>6–10 SKUs × 4 ângulos</td><td>10 macros de 4–6 s</td><td>1:1, 4:5, 9:16</td><td class="p1">P1</td></tr>
+          <tr><td>Parceiras reais</td><td>3 retratos + ambiente</td><td>3 depoimentos de 25–45 s</td><td>4:5 e 9:16</td><td class="p1">P1</td></tr>
+          <tr><td>Operação</td><td>10–14 fotos</td><td>2 vídeos + 6 B-rolls</td><td>16:9 e 9:16</td><td class="p2">P2</td></tr>
+          <tr><td>Suporte e conteúdo</td><td>Kit de apoio + telas</td><td>2 gravações de tela</td><td>1:1, 16:9, 9:16</td><td class="p2">P2</td></tr>
+          <tr><td>Identidade</td><td>Logo vetorial + aplicações</td><td>Animação opcional</td><td>SVG, PNG e MP4</td><td class="p1">P1</td></tr>
+        </tbody>
+      </table>
+      <p class="spec">P1 = necessário para tráfego · P2 = fortalece conversão e pode entrar na segunda publicação.</p>
+    </div><span class="page">11 / 13</span>
+  </section>
+
+  <section class="slide" id="slide-12" data-slide>
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>11 · Organização dos arquivos</span></div>
+    <div class="slide-inner">
+      <div class="grid2 split65">
+        <div><div class="kicker">Produção organizada vira infraestrutura</div><h2>Cada arquivo precisa dizer <span class="em">o que é e onde entra.</span></h2><div class="card goldcard"><h3>Padrão de nome</h3><p style="font-family:Consolas,monospace;color:var(--forest)">LP_AURALUZ_HERO_PARCEIRA_01_8x5.jpg</p><p style="font-family:Consolas,monospace;color:var(--forest)">LP_AURALUZ_PRODUTO_SKU123_MACRO_1x1.jpg</p><p style="font-family:Consolas,monospace;color:var(--forest)">ADS_AURALUZ_CONFIANCA_V1_9x16_SEM-TEXTO.mp4</p></div><div class="grid2 top" style="margin-top:18px;gap:16px"><div><h3>Pastas</h3><ul><li>01_Hero</li><li>02_Maleta</li><li>03_Produtos</li><li>04_Parceiras</li><li>05_Operação</li><li>06_Criativos</li></ul></div><div><h3>Versões</h3><ul><li>Original bruto</li><li>Tratada sem texto</li><li>Legendada</li><li>Desktop</li><li>Mobile</li><li>Documento de autorização</li></ul></div></div></div>
+        <div class="dark-panel"><h3>Planilha de aprovação</h3><ul><li>nome do arquivo;</li><li>SKU e categoria;</li><li>peça disponível?</li><li>prazo de disponibilidade;</li><li>pessoa autorizou uso?</li><li>uso permitido: LP, anúncio, orgânico;</li><li>responsável pela aprovação;</li><li>data e observação.</li></ul><p class="spec" style="color:var(--gold2)">Cor: sRGB · vídeo: H.264/AAC · versão limpa sempre preservada.</p></div>
+      </div>
+    </div><span class="page">12 / 13</span>
+  </section>
+
+  <section class="slide cover" id="slide-13" data-slide>
+    <img class="cover-photo" src="../assets/maleta-fechada.jpeg" alt="Maleta AuraLuz">
+    <div class="header"><span class="brand"><img src="../assets/logo-auraluz.jpg" alt="">AuraLuz + 33K</span><span>12 · Próximos passos</span></div>
+    <div class="slide-inner" style="width:66%">
+      <div class="kicker" style="color:var(--gold2)">Ordem recomendada</div><h2 style="font-size:4.4rem">Confirmar. Produzir. Aprovar. <span class="gold">Publicar.</span></h2>
+      <div class="timeline" style="margin:15px 0 22px"><div class="phase accent"><small>01</small><h3 style="color:var(--ink)">Regras</h3><p>Responder comissão, ciclo, garantia e responsabilidades.</p></div><div class="phase"><small>02</small><h3 style="color:var(--ink)">Seleção</h3><p>Escolher 3 parceiras, 6–10 SKUs e os cenários.</p></div><div class="phase"><small>03</small><h3 style="color:var(--ink)">Captação</h3><p>Executar P1 em um dia e P2 em complemento.</p></div><div class="phase"><small>04</small><h3 style="color:var(--ink)">Publicação</h3><p>Integrar formulário, revisar provas e ativar tráfego.</p></div></div>
+      <div class="checklist"><div class="check">Informações comerciais aprovadas</div><div class="check">Política de privacidade publicada</div><div class="check">Provas autorizadas por escrito</div><div class="check">Logo vetorial entregue</div><div class="check">Cortes desktop e mobile</div><div class="check">Nenhuma promessa sem comprovação</div></div>
+      <span class="pill">Briefing pronto para alinhamento</span>
+    </div><span class="page">13 / 13</span>
+  </section>
+</main>
+
+<nav class="controls" aria-label="Navegação da apresentação">
+  <button id="prev" type="button" aria-label="Slide anterior">↑</button><span id="counter">1 / 13</span><button id="next" type="button" aria-label="Próximo slide">↓</button>
+</nav>
+<script>
+  const slides=[...document.querySelectorAll('[data-slide]')];
+  const counter=document.getElementById('counter');let current=0;
+  function go(index){current=Math.max(0,Math.min(slides.length-1,index));slides[current].scrollIntoView({behavior:'smooth',block:'start'});counter.textContent=`${current+1} / ${slides.length}`}
+  document.getElementById('prev').addEventListener('click',()=>go(current-1));
+  document.getElementById('next').addEventListener('click',()=>go(current+1));
+  addEventListener('keydown',e=>{if(['ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(current+1)}if(['ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(current-1)}if(e.key==='Home')go(0);if(e.key==='End')go(slides.length-1)});
+  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting&&entry.intersectionRatio>.5){current=slides.indexOf(entry.target);counter.textContent=`${current+1} / ${slides.length}`}})},{threshold:[.55]});
+  slides.forEach(slide=>observer.observe(slide));
+</script>
+</body>
+</html>
