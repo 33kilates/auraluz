@@ -1,5 +1,6 @@
 const SPREADSHEET_ID = '1yTS-jUSAMCIJtpsLQDdxaLTSeObSNuxTng3YOiH2maI';
 const SHEET_NAME = 'Candidatas';
+const META_PIXEL_ID = '2302271876979185';
 const HEADERS = [
   'Data de cadastro', 'Nome', 'E-mail', 'WhatsApp', 'Cidade / região',
   'Contexto profissional', 'Tamanho da rede', 'Disponibilidade',
@@ -88,6 +89,12 @@ function doPost(event) {
       ''
     ]);
 
+    try {
+      sendMetaLead(payload);
+    } catch (metaError) {
+      console.error(`Falha no envio para a Meta: ${metaError.message}`);
+    }
+
     return jsonResponse({ ok: true });
   } catch (error) {
     console.error(error);
@@ -95,6 +102,67 @@ function doPost(event) {
   } finally {
     lock.releaseLock();
   }
+}
+
+function sendMetaLead(payload) {
+  const accessToken = PropertiesService.getScriptProperties().getProperty('META_CAPI_TOKEN');
+  if (!accessToken) throw new Error('META_CAPI_TOKEN não configurado.');
+
+  const email = clean(payload.email).toLowerCase();
+  const phone = normalizePhone(payload.whatsapp);
+  const nameParts = clean(payload.nome).toLowerCase().split(/\s+/).filter(Boolean);
+  const userData = {
+    em: [sha256(email)],
+    ph: [sha256(phone)],
+    client_user_agent: clean(payload.client_user_agent)
+  };
+
+  if (nameParts.length) userData.fn = [sha256(nameParts[0])];
+  if (nameParts.length > 1) userData.ln = [sha256(nameParts[nameParts.length - 1])];
+  if (payload.fbp) userData.fbp = clean(payload.fbp);
+  if (payload.fbc) userData.fbc = clean(payload.fbc);
+
+  const body = {
+    data: [{
+      event_name: 'Lead',
+      event_time: Math.floor(Date.now() / 1000),
+      event_id: clean(payload.event_id),
+      action_source: 'website',
+      event_source_url: clean(payload.page_url),
+      user_data: userData,
+      custom_data: {
+        content_name: 'Candidatura Revendedora AuraLuz',
+        lead_tier: clean(payload.lead_tier)
+      }
+    }],
+    access_token: accessToken
+  };
+
+  const response = UrlFetchApp.fetch(`https://graph.facebook.com/${META_PIXEL_ID}/events`, {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(body),
+    muteHttpExceptions: true
+  });
+
+  const status = response.getResponseCode();
+  if (status < 200 || status >= 300) {
+    throw new Error(`Meta CAPI respondeu ${status}: ${response.getContentText()}`);
+  }
+}
+
+function normalizePhone(value) {
+  const digits = String(value || '').replace(/\D/g, '');
+  return digits.startsWith('55') ? digits : `55${digits}`;
+}
+
+function sha256(value) {
+  const digest = Utilities.computeDigest(
+    Utilities.DigestAlgorithm.SHA_256,
+    value,
+    Utilities.Charset.UTF_8
+  );
+  return digest.map(byte => (`0${(byte < 0 ? byte + 256 : byte).toString(16)}`).slice(-2)).join('');
 }
 
 function clean(value) {

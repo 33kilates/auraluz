@@ -111,7 +111,7 @@
     }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
     .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-    .brand img { width: 68px; height: 68px; border: 1px solid rgba(234,219,182,.55); border-radius: 50%; object-fit: cover; }
+    .brand img { width: 96px; height: 96px; border: 1px solid rgba(234,219,182,.55); border-radius: 50%; object-fit: cover; }
     .brand span { display: none; }
 
     .hero {
@@ -363,13 +363,31 @@
     .product-grid { display: grid; gap: 18px; grid-template-columns: repeat(4, 1fr); }
     .product-grid img { width: 100%; aspect-ratio: 4 / 5; border-radius: 20px; object-fit: cover; }
 
-    .contact-link { color: var(--gold-light); font-weight: 700; text-decoration: none; }
-
-
     footer { padding: 42px 0 90px; background: var(--forest-3); color: rgba(255,255,255,.58); }
-    .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-grid { display: flex; align-items: center; justify-content: center; gap: 20px; text-align: center; }
     .footer-brand { color: white; font-family: var(--display); font-size: 1.25rem; font-weight: 700; }
     footer p { margin: 0; font-size: .75rem; }
+
+    .cookie-banner {
+      position: fixed;
+      z-index: 50;
+      right: 18px;
+      bottom: 18px;
+      display: none;
+      width: min(440px, calc(100% - 36px));
+      padding: 20px;
+      border: 1px solid rgba(234,219,182,.35);
+      border-radius: 20px;
+      background: var(--forest-3);
+      color: white;
+      box-shadow: 0 18px 55px rgba(10,15,10,.35);
+    }
+    .cookie-banner.show { display: block; }
+    .cookie-banner p { margin: 0 0 14px; color: rgba(255,255,255,.76); font-size: .78rem; }
+    .cookie-actions { display: flex; gap: 10px; }
+    .cookie-actions button { min-height: 42px; padding: 9px 16px; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; font-weight: 800; }
+    .cookie-accept { background: var(--gold); color: var(--forest-3); }
+    .cookie-decline { background: transparent; color: white; }
 
     .mobile-cta { display: none; }
 
@@ -393,7 +411,7 @@
       .container { width: min(100% - 26px, 1160px); }
       .section { padding: 70px 0; }
       .topbar { padding: 14px 0; }
-      .brand img { width: 50px; height: 50px; }
+      .brand img { width: 74px; height: 74px; }
       .brand b { font-size: 1.05rem; }
       .nav > .btn { display: none; }
       .hero, .hero-inner { min-height: 790px; }
@@ -412,7 +430,9 @@
       .context-card { min-height: 330px; }
       .contexts .primary { grid-column: auto; }
       .field.full { grid-column: auto; }
-      .footer-grid { align-items: flex-start; flex-direction: column; }
+      .footer-grid { align-items: center; flex-direction: column; }
+      .cookie-banner { right: 12px; bottom: 78px; width: calc(100% - 24px); }
+      .cookie-actions { flex-direction: column; }
       .mobile-cta {
         position: fixed;
         z-index: 30;
@@ -738,11 +758,11 @@
             <div class="field"><label for="momento">Quando gostaria de começar? *</label><select id="momento" name="momento" required><option value="">Selecione</option><option value="agora">Assim que for aprovada</option><option value="30dias">Nos próximos 30 dias</option><option value="pesquisa">Ainda estou pesquisando</option></select></div>
             <div class="field full checks">
               <label class="check"><input id="responsabilidade" name="responsabilidade" type="checkbox" required><span>Entendo que uma maleta consignada exige cuidado com as peças, registro de vendas e prestação de contas nas datas combinadas. *</span></label>
-              <label class="check"><input id="privacidade" name="privacidade" type="checkbox" required><span>Autorizo a AuraLuz a usar estes dados para avaliar meu perfil e entrar em contato sobre a parceria. Posso solicitar correção ou exclusão pelos canais oficiais da marca. *</span></label>
+              <label class="check"><input id="privacidade" name="privacidade" type="checkbox" required><span>Autorizo a AuraLuz a usar estes dados para avaliar meu perfil, entrar em contato e mensurar a origem desta solicitação em suas ferramentas de publicidade. Posso solicitar correção ou exclusão pelos canais oficiais da marca. *</span></label>
             </div>
             <div class="field full">
               <button class="btn btn-primary" type="submit">Enviar para avaliação <span aria-hidden="true">→</span></button>
-              <p class="privacy-note" id="privacidade">Não solicitamos CPF, renda, dados bancários ou documentos nesta etapa. Seus dados serão usados apenas para avaliar a parceria e realizar o contato. Você pode pedir correção ou exclusão pelo WhatsApp oficial da AuraLuz.</p>
+              <p class="privacy-note" id="privacidade-info">Não solicitamos CPF, renda, dados bancários ou documentos nesta etapa. Para mensurar a campanha, a AuraLuz pode usar Meta Pixel e API de Conversões, enviando identificadores de contato de forma protegida. Você pode pedir correção ou exclusão pelos canais oficiais da marca.</p>
               <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
             </div>
           </div>
@@ -754,17 +774,64 @@
 
   <footer>
     <div class="container footer-grid">
-      <div><div class="footer-brand">AuraLuz Semijoias</div><p>Artur Nogueira e região · <a class="contact-link" href="https://wa.me/5519994373755" target="_blank" rel="noopener">WhatsApp (19) 99437-3755</a> · <a class="contact-link" href="https://www.instagram.com/auraluzsemijoias/" target="_blank" rel="noopener">Instagram</a></p></div>
-      <p>© <span id="year"></span> AuraLuz. Cadastro sujeito à análise.</p>
+      <div><div class="footer-brand">AuraLuz Semijoias</div><p>© <span id="year"></span> AuraLuz. Cadastro sujeito à análise.</p></div>
     </div>
   </footer>
 
   <a class="mobile-cta" href="#avaliacao">Solicitar avaliação</a>
 
+  <aside class="cookie-banner" id="cookieBanner" aria-label="Preferências de mensuração">
+    <p>Usamos o Meta Pixel para medir visitas e entender o desempenho das campanhas. Você pode aceitar ou continuar sem essa mensuração.</p>
+    <div class="cookie-actions">
+      <button class="cookie-accept" id="cookieAccept" type="button">Aceitar mensuração</button>
+      <button class="cookie-decline" id="cookieDecline" type="button">Agora não</button>
+    </div>
+  </aside>
+
   <script>
     const ROUTING_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxc9l-3q5qMfvSVDMJpaJdr1ofNh9XsQZzbko7CRXgqPWcrGiL-4XofHPeZ0nHhyQ-y/exec';
     const WHATSAPP_NUMBER = '5519994373755';
-    const PRIVACY_POLICY_URL = `${location.origin}${location.pathname}#privacidade`;
+    const META_PIXEL_ID = '2302271876979185';
+    const META_CONSENT_KEY = 'auraluz_meta_consent';
+    const PRIVACY_POLICY_URL = `${location.origin}${location.pathname}#privacidade-info`;
+
+    let metaPixelReady = false;
+
+    function initMetaPixel() {
+      if (metaPixelReady) return;
+      const fbq = window.fbq = window.fbq || function() {
+        fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments);
+      };
+      if (!fbq.loaded) {
+        fbq.push = fbq;
+        fbq.loaded = true;
+        fbq.version = '2.0';
+        fbq.queue = [];
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        document.head.appendChild(script);
+      }
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+      metaPixelReady = true;
+    }
+
+    const cookieBanner = document.getElementById('cookieBanner');
+    const storedConsent = localStorage.getItem(META_CONSENT_KEY);
+    if (storedConsent === 'accepted') initMetaPixel();
+    else if (!storedConsent) cookieBanner.classList.add('show');
+
+    document.getElementById('cookieAccept').addEventListener('click', () => {
+      localStorage.setItem(META_CONSENT_KEY, 'accepted');
+      cookieBanner.classList.remove('show');
+      initMetaPixel();
+    });
+
+    document.getElementById('cookieDecline').addEventListener('click', () => {
+      localStorage.setItem(META_CONSENT_KEY, 'declined');
+      cookieBanner.classList.remove('show');
+    });
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -834,12 +901,15 @@
 
       const data = Object.fromEntries(new FormData(form).entries());
       const fbclid = document.getElementById('fbclid').value;
+      const eventId = `lead_${Date.now()}_${window.crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`;
       const lead = {
         ...data,
         created_at: new Date().toISOString(),
+        event_id: eventId,
         source_lp: 'LP Recrutamento AuraLuz',
         offer: 'Parceria consignada AuraLuz',
         page_url: location.href,
+        client_user_agent: navigator.userAgent,
         fbp: readCookie('_fbp'),
         fbc: readCookie('_fbc') || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : ''),
         privacy_policy_url: PRIVACY_POLICY_URL
@@ -856,6 +926,9 @@
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(lead)
         });
+        if (metaPixelReady && window.fbq) {
+          window.fbq('track', 'Lead', { content_name: 'Candidatura Revendedora AuraLuz' }, { eventID: eventId });
+        }
         status.textContent = 'Solicitação recebida. Agora vamos abrir o WhatsApp da AuraLuz para concluir seu contato.';
         const message = encodeURIComponent(`Olá, AuraLuz. Sou ${lead.nome}, de ${lead.cidade}, e acabei de enviar minha solicitação para ser revendedora.`);
         setTimeout(() => location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, 900);
