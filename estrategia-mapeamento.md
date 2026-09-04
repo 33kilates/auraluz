@@ -115,7 +115,7 @@ Isto é pesquisa qualitativa exploratória. A contagem abaixo indica recorrênci
 - **Gatilho:** cansaço de alto volume e baixo valor, ou medo de estoque parado.
 - **Transformação:** vender menos unidades com mais valor percebido e apresentação superior.
 - **Promessa possível:** “Um mostruário à altura da cliente que você já atende.”
-- **Mecanismo:** banho de ouro 18K, design sofisticado, seleção física e consignação.
+- **Mecanismo:** acabamentos em ouro 18K, ródio branco ou prata 1000, design sofisticado, seleção física e consignação.
 - **Prova necessária:** macros, especificação técnica do banho, garantia oficial, embalagem e comparação real de acabamento.
 - **Objeções:** comissão, qualidade do banho, troca, preço, autonomia sobre o mix.
 - **Confiança:** média; a percepção premium existe nos ativos, mas faltam provas técnicas e depoimentos.
@@ -206,4 +206,3 @@ A pontuação serve para ordenar atendimento, não para decisão automática de 
 ### Validação econômica
 
 O território vencedor deve ser escolhido por **CAC por parceira aprovada, taxa de ativação, vendas líquidas, perdas/inadimplência, retenção por ciclo e margem de contribuição**. CTR e CPL são diagnósticos intermediários.
-
